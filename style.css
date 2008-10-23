@@ -1,0 +1,96 @@
+body {
+    font-family: "Lucida Grande", Verdana, "Bitstream Vera Sans", Arial, sans-serif;
+    font-size: 76%;
+    font-weight: normal;
+}
+p, li, td {
+    color: #555;
+    font-size: 1.0em;
+    line-height: 165%;
+}
+a {
+    color: blue;
+    text-decoration: none;
+}
+#container {
+    margin: 0 auto 0 auto;
+    width: 900px;
+}
+#header {
+    margin-top: 30px;
+    margin-bottom: 45px;
+}
+#header h1 a {
+    color: #660000;
+    font-size: 1.2em;
+}
+#menubar {
+    margin-top: 5px;
+}
+#menu li {
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.post {
+    margin-bottom: 45px;
+}
+.post .title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.7em;
+    font-weight: normal;
+    letter-spacing: 1.1px;
+}
+.post .title a {
+    color: #000;
+    text-decoration: none;
+}
+.post .date {
+    color: #888;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.post p {
+    margin-bottom: 9px;
+}
+.post h2 {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1.4em;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}
+.post h3 {
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1.2em;
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+.post ul, .post ol {
+    margin-bottom: 15px;
+}
+.post li {
+    border-left: 1px dotted #aaa;
+    margin-left: 15px;
+    padding-left: 15px;
+}
+.post blockquote * {
+    margin: 25px;
+    font-style: italic;
+    color: #888;
+}
+.post .tags {
+    margin-top: 25px;
+}
+.post .tag {
+    display: inline;
+    margin-left: 8px;
+}
+.post .tag a {
+    color: #888;
+}
+.post pre {
+    font-size: 1.2em;
+}
