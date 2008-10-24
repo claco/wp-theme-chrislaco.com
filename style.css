@@ -35,7 +35,7 @@ a {
 .post {
     margin-bottom: 45px;
 }
-.post .title {
+.post .title, #resume h2, #resume #summary h3 {
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1.7em;
     font-weight: normal;
@@ -54,14 +54,14 @@ a {
 .post p {
     margin-bottom: 9px;
 }
-.post h2 {
+.post h2, #resume h3 {
     font-family: Helvetica,Arial,sans-serif;
     font-size: 1.4em;
     font-weight: normal;
     margin-top: 15px;
     margin-bottom: 7px;
 }
-.post h3 {
+.post h3, #resume h4 {
     font-family: Helvetica,Arial,sans-serif;
     font-size: 1.2em;
     font-weight: normal;
@@ -93,4 +93,8 @@ a {
 }
 .post pre {
     font-size: 1.2em;
+}
+.hresume #overview, .hresume .profile-header, .hresume #additional-information,
+.hresume hr {
+    display: none;
 }
