@@ -1,5 +1,5 @@
 <?php get_header();?>
-<?php query_posts('cat=-10');?>
+<?php query_posts('cat=-'.get_cat_id('manifesto'));?>
 <?php if(have_posts()):?>
 	<?php while(have_posts()):the_post();?>
 		<div class="post">
