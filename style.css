@@ -95,6 +95,6 @@ a {
     font-size: 1.2em;
 }
 .hresume #overview, .hresume .profile-header, .hresume #additional-information,
-.hresume hr {
+.hresume hr, .manifest .date {
     display: none;
 }

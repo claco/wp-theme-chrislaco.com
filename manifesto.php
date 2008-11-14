@@ -1,8 +1,13 @@
+<?php
+/*
+Template Name: Manifesto
+*/
+?>
 <?php get_header();?>
-<?php query_posts('cat=-10');?>
+<?php query_posts('cat=10');?>
 <?php if(have_posts()):?>
 	<?php while(have_posts()):the_post();?>
-		<div class="post">
+		<div class="post manifest">
 			<h2 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 			<div class="date">
 				<?php the_time('F jS, Y');?>
