@@ -60,13 +60,17 @@ blockquote {
 #header a:hover {
     color: #83b728;
 }
-#header .photo, #footer .photo {
+#header .photo {
     border: 1px solid #ffffff;
     padding: 3px;
     display: inline;
     height: 32px;
     width: 32px;
     vertical-align: middle;
+    background-image: url(../images/photo.jpg);
+}
+#header .photo:hover {
+    background-image: url(../images/photo2.jpg);
 }
 #header .menu {
     display: inline;

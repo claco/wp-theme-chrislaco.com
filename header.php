@@ -20,7 +20,7 @@
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
 ;
-    			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/photo.jpg" alt="" />');
+    			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/spacer.gif" alt="" />');
     			$('#header .menu li:not(:last)').after('<li class="separator">&middot;</li>');
     			$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
     			$('#footer .copyright li:not(:last)').after('<li class="separator">&middot;</li>');
