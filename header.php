@@ -4,19 +4,56 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 		<title><?php bloginfo(’name’);?><?php wp_title(); ?></title>
-		<link rel="stylesheet" href="<?php echo dirname(get_bloginfo('stylesheet_url'));?>/reset.css" type="text/css" media="all" charset="utf-8" />
-		<link rel="stylesheet" href="<?php bloginfo('stylesheet_url');?>" type="text/css" media="screen" charset="utf-8" />
-		<?php wp_head();?>
+		<link rel="alternate" type="application/atom+xml" href="<?php bloginfo('atom_url'); ?>" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/styles/shCore.css" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/styles/shThemeDefault.css" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushXml.js"></script>
+    	<script type="text/javascript">
+    		//<![CDATA[
+    		$(document).ready(function(){
+    			SyntaxHighlighter.all();
+;
+    			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/photo.jpg" alt="" />');
+    			$('#header .menu li:not(:last)').after('<li class="separator">&middot;</li>');
+    			$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
+    			$('#footer .copyright li:not(:last)').after('<li class="separator">&middot;</li>');
+    			$('#content .extras li:not(:last)').after('<li class="separator">&middot;</li>');
+    			$('#recent').after('<div id="wonderbar"><img id="previous" class="icon" src="<?php bloginfo('template_directory'); ?>/images/larrow.gif" alt="" /><img id="next" class="icon" src="<?php bloginfo('template_directory'); ?>/images/rarrow.gif" alt="" /></div>');
+    			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
+    			$('#recent').wrapInner('<div class="wrapper"></div>');
+    			$('#recent .wrapper').wrapInner('<ul></ul>');
+    			$('#recent .entry').wrap('<li></li>');
+    			$('.entry:last').after('<div style="clear:both;"></div>');
+    			$('#footer').wrapInner('<div class="wrapper"></div>');
+    			$('#footer .links li:first-child').addClass('first');
+    			$('#footer .links:last').after('<div style="clear:both;"></div>');
+    			$('.tags li:not(:last)').after('<li class="separator">, </li>');
+
+    		    $('li.tags').click(function () {
+    		      $('ul.tags').toggle('fast');
+    				return false;
+    		    });
+
+    		    $("#recent .wrapper").jCarouselLite({
+    		        btnNext: "#next",
+    		        btnPrev: "#previous",
+    				visible: 1
+    		    });
+    		});
+    		//]]>
+    	</script>
 	</head>
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1><a href="<?php bloginfo('url');?>/"><?php bloginfo('name');?> &lt;<?php bloginfo('admin_email');?>&gt;</a></h1>
-				<div id="menubar">
-					<ul id="menu">
-						<li><a href="<?php bloginfo('url');?>">Home</a></li>
-						<?php wp_list_pages('title_li=&sort_column=post_title'); ?>
-					</ul>
-				</div>
+				<h1 class="title"><a href="<?php bloginfo('url');?>/"><?php bloginfo('name');?></h1>
+                <?php include('menu.php') ?>
 			</div>
 			<div id="content">

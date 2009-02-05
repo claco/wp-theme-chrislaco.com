@@ -1,0 +1,264 @@
+/* Page */
+html {
+    background-color: #111111;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", "Arial Unicode MS", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 153%;
+    color: #666666;
+}
+a {
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    color: #83b728;
+}
+blockquote {
+    background: url(../images/lquote.gif) no-repeat top left;
+    font-style: italic;
+    margin: 0 10px 0 10px;
+    padding: 0 25px 0 25px;
+}
+.icon { 
+      background-color:#83b728; 
+      width: 16px;
+      height: 16px;
+}
+.menu li {
+    list-style: none;
+    display: inline;
+}
+
+/* Header */
+#header {
+    background-color: #111111;
+    clear: both;
+    color: #7A7976;
+    margin: 0;
+    padding: 0;
+}
+#header .wrapper {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+#header a, #header .separator {
+    color: #ffffff;
+    margin: 0 2px 0 2px;
+    font-size: 12px;
+}
+#header a:hover {
+    color: #83b728;
+}
+#header .photo, #footer .photo {
+    border: 1px solid #ffffff;
+    padding: 3px;
+    display: inline;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+#header .menu {
+    display: inline;
+    margin-left: 10px;
+}
+#header .title {
+    width: 100px;
+    display: none;
+}
+#header li img {
+    vertical-align: middle;
+    padding-bottom: 3px;
+    margin-left: 5px;
+}
+
+/* Content */
+#introduction {
+    margin: 0 auto 50px auto;
+    width: 850px;
+}
+#introduction .title {
+    font-size: 20px;
+    color: #000000;
+    margin-bottom: 7px;
+}
+#recent {
+    background: #dddddd;
+    border-top: 1px solid #bbbbbb;
+    margin: 0;
+}
+#recent li {
+    list-style: none;
+}
+#recent .wrapper {
+    margin: 0 auto 0 auto;
+    padding-bottom: 10px;
+    width: 850px;
+}
+#recent .entry {
+    float: left;
+    font-size: 10px;
+}
+#recent .entry .title {
+    font-size: 12px;
+    height: 20px;
+    letter-spacing: -1px;
+    color: #000000;
+}
+ul.tags {
+    margin: 0 0 15px 0;
+    font-size: 10px;
+    font-weight: bold;
+    color: #000000;
+    display: none;
+}
+ul.tags li {
+    display: inline;
+    margin-right: 2px;
+}
+.dp-highlighter .bar {
+    display: none;
+}
+.extras {
+    font-size: 10px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+    color: #000000;
+}
+.extras li {
+    display: inline;
+    list-style: none;
+}
+.extras li.separator {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#wonderbar {
+    background: #dddddd;
+    margin: 0;
+    padding-bottom: 5px;
+}
+#wonderbar .wrapper {
+    width: 850px;
+    margin: 0 auto 0 auto;
+    background: #dddddd;
+    text-align: left;
+}
+#previous {
+    width: 16px;
+    height: 16px;
+    margin: 0 2px 0 0;
+    padding: 0;
+    cursor: pointer;
+}
+#next {
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 2px;
+    padding: 0;
+    cursor: pointer;
+}
+
+
+/* Footer */
+#footer {
+    background-color: #111111;
+    clear: both;
+    color: #7A7976;
+    padding-top: 13px;
+    padding-bottom: 15px;
+}
+#footer .wrapper {
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(../images/email.png);
+    background-repeat: no-repeat;
+    background-position: 100% 10px;
+}
+#footer a:hover {
+    color: #83b728;
+}
+#footer ul {
+    margin: 0;
+    padding: 0;
+}
+#footer li {
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+#footer li.separator {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+#footer li a {
+    color: #C2C0BA;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+#footer img {
+    vertical-align: middle;
+}
+#footer .menu {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 1.6em;
+    margin: 0 auto 0 auto;
+    width: 850px;
+}
+#footer .menu img {
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+#footer .copyright {
+    font-size: 9px;
+    font-weight: normal;
+    line-height: 1.9em;
+    margin: 0 auto 0 auto;
+    width: 850px;
+    display: inline;
+}
+#footer .links {
+    margin-top: 25px;
+    float: left;
+    width: 30%;
+    margin-right: 25px;
+}
+#footer .links .title {
+    font-size: 11px;
+    color: #C2C0BA;
+}
+#footer .links ul {
+
+}
+#footer .links li {
+    display: block;
+    background-image: url(../images/bullet-green.gif);
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    padding-left: 17px;
+    border-bottom: 1px solid #222222;
+}
+#footer .links .first {
+    border-top: 1px solid #222222;
+}
+#footer .links a {
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 1.6em;
+}
