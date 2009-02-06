@@ -87,15 +87,27 @@ blockquote {
 }
 
 /* Content */
-#introduction {
+#content {
     margin: 0 auto 50px auto;
     width: 850px;
 }
-#introduction .title {
+#content .entry {
+    margin-bottom: 35px;
+}
+#content .title {
     font-size: 20px;
     color: #000000;
     margin-bottom: 7px;
 }
+#content .entry .more-link {
+    color: #666666;
+    font-weight: normal;
+}
+#content .entry .more-link:hover {
+    color: #83b728;
+}
+
+
 #recent {
     background: #dddddd;
     border-top: 1px solid #bbbbbb;
@@ -112,6 +124,8 @@ blockquote {
 #recent .entry {
     float: left;
     font-size: 10px;
+    width: 850px;
+    height: 95px;
 }
 #recent .entry .title {
     font-size: 12px;

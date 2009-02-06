@@ -19,7 +19,7 @@
     		//<![CDATA[
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
-;
+
     			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/spacer.gif" alt="" />');
     			$('#header .menu li:not(:last)').after('<li class="separator">&middot;</li>');
     			$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
@@ -36,10 +36,13 @@
     			$('#footer .links:last').after('<div style="clear:both;"></div>');
     			$('.tags li:not(:last)').after('<li class="separator">, </li>');
 
-    		    $('li.tags').click(function () {
-    		      $('ul.tags').toggle('fast');
-    				return false;
-    		    });
+                $('.entry').each(function() {
+                    var $entry = $(this);
+                    $entry.find('li.tags a').click(function() {
+                        $entry.find('ul.tags').toggle('fast');
+                        return false;
+                    });
+                });
 
     		    $("#recent .wrapper").jCarouselLite({
     		        btnNext: "#next",
