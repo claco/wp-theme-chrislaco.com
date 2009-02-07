@@ -106,6 +106,37 @@ blockquote {
 #content .entry .more-link:hover {
     color: #83b728;
 }
+#content .comments .title {
+    font-size: 14px;
+}
+.comment.odd {
+    basckground-color: #efefef;
+}
+.comment .number {
+    font-size: 20px;
+    color: #bbbbbb;
+    font-family: Georgia;
+    font-weight: bold;
+    width: 25px;
+    float: left;
+}
+.comment .author {
+    width: 50px;
+    float: left;
+    text-align: center;
+}
+.comment .avatar {
+    padding: 2px;
+    border: 1px solid #dddddd;
+}
+.comment .posted {
+    padding-left: 90px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.comment .content {
+    padding-left: 90px;
+}
 
 
 #recent {
