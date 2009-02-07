@@ -15,16 +15,17 @@
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushXml.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
     	<script type="text/javascript">
     		//<![CDATA[
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
 
     			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/spacer.gif" alt="" />');
-    			$('#header .menu li:not(:last)').after('<li class="separator">&middot;</li>');
+
+    			
     			$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
-    			$('#footer .copyright li:not(:last)').after('<li class="separator">&middot;</li>');
-    			$('#content .extras li:not(:last)').after('<li class="separator">&middot;</li>');
+
     			$('#recent').after('<div id="wonderbar"><img id="previous" class="icon" src="<?php bloginfo('template_directory'); ?>/images/larrow.gif" alt="" /><img id="next" class="icon" src="<?php bloginfo('template_directory'); ?>/images/rarrow.gif" alt="" /></div>');
     			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
     			$('#recent').wrapInner('<div class="wrapper"></div>');
@@ -34,15 +35,8 @@
     			$('#footer').wrapInner('<div class="wrapper"></div>');
     			$('#footer .links li:first-child').addClass('first');
     			$('#footer .links:last').after('<div style="clear:both;"></div>');
-    			$('.tags li:not(:last)').after('<li class="separator">, </li>');
 
-                $('.entry').each(function() {
-                    var $entry = $(this);
-                    $entry.find('li.tags a').click(function() {
-                        $entry.find('ul.tags').toggle('fast');
-                        return false;
-                    });
-                });
+
 
     		    $("#recent .wrapper").jCarouselLite({
     		        btnNext: "#next",
@@ -52,6 +46,8 @@
     		});
     		//]]>
     	</script>
+    	
+    	<?php wp_head(); ?>
 	</head>
 	<body>
 		<div id="container">
