@@ -26,6 +26,9 @@ $(document).ready(function(){
         
         if (i % 2 == 0) {
             $(this).addClass('even');
+            if ($(this).hasClass('author')) {
+                $(this).corner('10px');
+            }
         } else {
             $(this).addClass('odd');
             $(this).corner('10px');
