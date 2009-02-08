@@ -106,18 +106,22 @@ blockquote {
 #content .entry .more-link:hover {
     color: #83b728;
 }
-#content .comments .title {
-    font-size: 14px;
+#content .comments .title, #content .comment-form .title {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+.comment {
+    padding: 11px 6px 2px 12px;
 }
 .comment.odd {
-    basckground-color: #efefef;
+    background-color: #efefef;
 }
 .comment .number {
     font-size: 20px;
     color: #bbbbbb;
     font-family: Georgia;
     font-weight: bold;
-    width: 25px;
+    width: 30px;
     float: left;
 }
 .comment .author {
@@ -133,9 +137,34 @@ blockquote {
     padding-left: 90px;
     margin-bottom: 5px;
     font-weight: bold;
+    font-style: italic;
+    font-size: 10px;
 }
 .comment .content {
     padding-left: 90px;
+}
+.comment-form {
+    background-color: #ffffff;
+}
+.ui-dialog.comment-form {
+    padding: 20px;
+}
+.ui-dialog-titlebar-close {
+    float: right;
+}
+#comment-form .status {
+    color: #ff0000;
+    font-size: 12px;
+    font-style: italic;
+    display: none;
+    margin-bottom: 10px;
+}
+#comment-form input {
+    width: 200px;
+    margin-right: 15px;
+}
+#comment-form textarea {
+    width: 450px;
 }
 
 
@@ -169,7 +198,9 @@ ul.tags {
     font-size: 10px;
     font-weight: bold;
     color: #000000;
+    background: #efefef;
     display: none;
+    padding: 2px 5px 2px 5px;
 }
 ul.tags li {
     display: inline;

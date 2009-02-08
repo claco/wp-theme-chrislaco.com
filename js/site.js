@@ -9,8 +9,9 @@ $(document).ready(function(){
     });
 
     // tag separators
-    $('.tags').each(function() {
+    $('ul.tags').each(function() {
         $(this).find('li:not(:last)').after('<li class="separator">, </li>');
+        $(this).corner('6px');
     });
 
     // dot separators
@@ -27,6 +28,60 @@ $(document).ready(function(){
             $(this).addClass('even');
         } else {
             $(this).addClass('odd');
+            $(this).corner('10px');
         }
-    })    
+    })
+
+    // comment form
+    $('#comment-fsorm').dialog({
+        title: 'Add Comment',
+        resizable: false,
+        width: 550,
+        height: 500,
+        buttons: {
+            'Submit': function()  {
+                $('#commentform').submit();
+            },
+            'Cancel': function() {
+                $('#comment-form .status').hide();
+                $(this).dialog('close');
+            }
+        },
+        autoOpen: false,
+        modal: true,
+        stack: true,
+        overlay: {
+            opacity: 0.6,
+            background: "black"
+        }
+    }).find('#submit').hide();
+
+    $('#comment-add').click(function() {
+        $('#comment-form').dialog('open');
+    });
+
+    $('#commentform').submit(function() {
+        $.ajax({
+          type: 'POST',
+          data: {
+              comment_post_ID: $('#comment_post_ID').val(),
+              author: $('#author').val(),
+              email: $('#email').val(),
+              url: $('#url').val(),
+              comment: $('#comment').val()
+          },
+          url: '../../wp-content/themes/chrislaco.com/comments-ajax.php',
+          dataType: 'text',
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+               $('#comment-form .status').text(XMLHttpRequest.responseText).show();
+          },
+          success: function() {
+              $('#comment-form .status').hide();
+              $('#comment-form').dialog('close');
+              window.location.reload();
+          }
+        });
+
+        return false;
+    });
 });

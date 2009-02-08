@@ -7,8 +7,7 @@
         <?php endif; ?>
     </div>
     <div class="posted">
-        <?php comment_date(); ?>
-        <?php comment_time(); ?>
+        On <?php comment_date(); ?> <?php comment_time(); ?>, <?php comment_author_link(); ?> wrote:
     </div>
     <div class="content">
         <?php comment_text(); ?>
