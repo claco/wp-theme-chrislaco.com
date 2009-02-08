@@ -14,13 +14,13 @@
 
 <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
 
+<div class="status"></div>
+
 <?php if ( $user_ID ) : ?>
 
 <p>Logged in as <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(get_permalink()); ?>" title="Log out of this account">Log out &raquo;</a></p>
 
 <?php else : ?>
-
-<div class="status"></div>
 
 <p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
 <label for="author"><small>Name <?php if ($req) echo "(required)"; ?></small></label></p>
