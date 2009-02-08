@@ -58,6 +58,7 @@ $(document).ready(function(){
 
     $('#comment-add').click(function() {
         $('#comment-form').dialog('open');
+        return false;
     });
 
     $('#commentform').submit(function() {

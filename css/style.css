@@ -116,6 +116,9 @@ blockquote {
 .comment.odd {
     background-color: #efefef;
 }
+.comment.author {
+    background-color: #D7F4A5;
+}
 .comment .number {
     font-size: 20px;
     color: #bbbbbb;

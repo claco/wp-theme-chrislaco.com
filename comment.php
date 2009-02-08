@@ -1,4 +1,4 @@
-<div class="<?php comment_type('comment', 'trackback', 'pingback'); ?>">
+<div class="<?php comment_type('comment', 'trackback', 'pingback'); ?><?php if ($comment->user_id): ?> author<?php endif; ?>">
     <div class="author">
         <?php if (get_comment_author_url()) : ?>
             <a href="<?php echo get_comment_author_url();?>"><?php echo get_avatar(get_comment_author_email(), 32);?></a>
