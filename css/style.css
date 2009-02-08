@@ -108,7 +108,7 @@ blockquote {
 }
 #content .comments .title, #content .comment-form .title {
     font-size: 13px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .comment {
     padding: 11px 6px 2px 12px;
@@ -149,8 +149,15 @@ blockquote {
 .ui-dialog.comment-form {
     padding: 20px;
 }
-.ui-dialog-titlebar-close {
-    float: right;
+.ui-dialog-titlebar {
+    text-align: right;
+    margin-bottom:-25px;
+}
+.ui-dialog-buttonpane {
+    padding-bottom: 12px;
+}
+.ui-dialog-buttonpane button {
+    margin-right: 12px;
 }
 #comment-form .status {
     color: #ff0000;
@@ -165,6 +172,9 @@ blockquote {
 }
 #comment-form textarea {
     width: 450px;
+}
+#content .comment-form .title {
+    margin-bottom: 20px;
 }
 
 

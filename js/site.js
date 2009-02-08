@@ -33,11 +33,11 @@ $(document).ready(function(){
     })
 
     // comment form
-    $('#comment-fsorm').dialog({
-        title: 'Add Comment',
+    $('#comment-form').dialog({
+
         resizable: false,
         width: 550,
-        height: 500,
+        height: 375,
         buttons: {
             'Submit': function()  {
                 $('#commentform').submit();
