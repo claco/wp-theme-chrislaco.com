@@ -37,16 +37,14 @@ $(document).ready(function(){
 
     // comment form
     $('#comment-form').dialog({
-
         resizable: false,
-        width: 550,
-        height: 375,
+        width: 455,
+        height: 470,
         buttons: {
             'Submit': function()  {
                 $('#commentform').submit();
             },
             'Cancel': function() {
-                $('#comment-form .status').hide();
                 $(this).dialog('close');
             }
         },
@@ -61,6 +59,13 @@ $(document).ready(function(){
 
     $('#comment-add').click(function() {
         $('#comment-form').dialog('open');
+        $('#author').focus();
+
+        Recaptcha.create(reCaptchaPublicKey, 'recaptcha_div', {
+           theme: 'clean',
+           tabindex: 4
+        });
+
         return false;
     });
 
@@ -72,15 +77,17 @@ $(document).ready(function(){
               author: $('#author').val(),
               email: $('#email').val(),
               url: $('#url').val(),
-              comment: $('#comment').val()
+              comment: $('#comment').val(),
+              recaptcha_response_field: $('#recaptcha_response_field').val(),
+              recaptcha_challenge_field: $('#recaptcha_challenge_field').val()
           },
           url: '../../wp-content/themes/chrislaco.com/comments-ajax.php',
-          dataType: 'text',
+          dataType: 'html',
           error: function(XMLHttpRequest, textStatus, errorThrown) {
-               $('#comment-form .status').text(XMLHttpRequest.responseText).show();
+               $('#comment-form .status').html(XMLHttpRequest.responseText);
+               Recaptcha.reload();
           },
           success: function() {
-              $('#comment-form .status').hide();
               $('#comment-form').dialog('close');
               window.location.reload();
           }

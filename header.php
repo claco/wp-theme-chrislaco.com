@@ -19,6 +19,9 @@
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
     	<script type="text/javascript">
     		//<![CDATA[
+    		
+    		var reCaptchaPublicKey = '<?php global $recaptcha_opt;echo $recaptcha_opt['pubkey']; ?>';
+
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
 

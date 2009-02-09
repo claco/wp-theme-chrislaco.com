@@ -1,6 +1,6 @@
 <?php
 require_once('../../../wp-config.php');
-
+nocache_headers();
 global $comment, $comments, $post, $wpdb, $user_ID, $user_identity, $user_email, $user_url;
 
 function fail($s) {
@@ -30,20 +30,20 @@ $comment_author_email = trim($_POST['email']);
 $comment_author_url   = trim($_POST['url']);
 $comment_content      = trim($_POST['comment']);
 
+$comment_type = '';
+
 // If the user is logged in
 get_currentuserinfo();
 if ( $user_ID ) :
-	$comment_author       = addslashes($user_identity);
-	$comment_author_email = addslashes($user_email);
-	$comment_author_url   = addslashes($user_url);
+	$comment_author       = coalesce($comment_author, addslashes($user_identity));
+	$comment_author_email = coalesce($comment_author_email, addslashes($user_email));
+	$comment_author_url   = coaloesce($comment_author_url, addslashes($user_url));
 else :
 	if ( get_option('comment_registration') )
 		fail(__('Sorry, you must be logged in to post a comment.'));
 endif;
 
-$comment_type = '';
-
-if ( get_settings('require_name_email') && !$user_ID ) {
+if ( get_settings('require_name_email') ) {
 	if ( 6 > strlen($comment_author_email) || '' == $comment_author )
 		fail(__('Error: please fill the required fields (name, email).'));
 	elseif ( !is_email($comment_author_email))
@@ -61,6 +61,23 @@ if ( $wpdb->get_var($dupe) )
 	fail( __('Duplicate comment detected; it looks as though you\'ve already said that!') );
 
 $commentdata = compact('comment_post_ID', 'comment_author', 'comment_author_email', 'comment_author_url', 'comment_content', 'comment_type', 'user_ID');
+
+
+if ( strlen($_POST['recaptcha_response_field']) == 0 ) {
+    fail(__('Error: reCaptcha value is required.'));
+} elseif ( strlen($_POST['recaptcha_challenge_field']) == 0 ) {
+    fail('Error: reCaptcha challenge is missing or invalid.');
+} else {
+	$response = recaptcha_check_answer($recaptcha_opt['privkey'],
+		$_SERVER['REMOTE_ADDR'],
+		$_POST['recaptcha_challenge_field'],
+		$_POST['recaptcha_response_field']
+	);
+
+    if (!$response->is_valid) {
+        fail('Error: captcha error (' . $response->error . ')');
+    }
+};
 
 $new_comment_ID = wp_new_comment($commentdata);
 
