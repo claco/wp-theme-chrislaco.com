@@ -1,5 +1,5 @@
 <?php $tags = get_the_tags(); ?>
-<div class="entry">
+<div class="entry<?php echo ($recent) ? ' recent' : ''; ?>">
 	<h2 class="title"><a title="Continue reading <?php the_title();?>" href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 	<ul class="extras">
 		<li class="posted"><?php the_time('l, F jS, Y');?></li
@@ -10,6 +10,6 @@
 		><?php the_tags('<li class="tag">','</li><li class="tag">','</li>');?></ul><?php endif;?></li><?php endif;?>
 	</ul>
 	<div class="content">
-	    <?php the_content('More...'); ?>
+	    <?php ($excerpt) ? the_excerpt() : the_content('More...'); ?>
 	</div>
 </div>

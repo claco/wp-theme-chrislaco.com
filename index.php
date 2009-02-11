@@ -9,10 +9,8 @@
 <?php query_posts('showposts=5&offset=5&cat=-'.get_cat_id('manifesto'));?>
 <?php if(have_posts()):?>
 	<?php while(have_posts()):the_post();?>
-		<div class="entry recent">
-			<h2 title="Continue reading <?php the_title();?>" class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-			<?php the_excerpt(); ?>
-		</div>
+	    <?php $excerpt = true; $recent = true; ?>
+	    <?php include('entry.php');?>
 	<?php endwhile;?>
 <?php endif;?>
 
