@@ -1,4 +1,5 @@
-<div class="<?php comment_type('comment', 'trackback', 'pingback'); ?><?php if ($comment->user_id): ?> author<?php endif; ?>">
+<div class="<?php comment_type('comment', 'trackback', 'pingback'); ?><?php echo ($counter % 2 == 0) ? ' even' : ' odd'; ?><?php if ($comment->user_id): ?> author<?php endif; ?>">
+    <div class="number"><?php echo $counter; ?></div>
     <div class="author">
         <?php if (get_comment_author_url()) : ?>
             <a href="<?php echo get_comment_author_url();?>"><?php echo get_avatar(get_comment_author_email(), 32);?></a>

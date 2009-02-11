@@ -42,19 +42,25 @@ blockquote {
     background-color: #111111;
     clear: both;
     color: #7A7976;
-    margin: 0;
-    padding: 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 #header .wrapper {
     width: 850px;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 8px;
-    padding-bottom: 8px;
 }
-#header a, #header .separator {
+#header .menu li {
+    margin-right: 8px;
+}
+#header a {
     color: #ffffff;
-    margin: 0 2px 0 2px;
+    margin: 0;
+    font-size: 12px;
+}
+#header .separator {
+    color: #ffffff;
+    margin: 0 6px 0 0;
     font-size: 12px;
 }
 #header a:hover {
@@ -73,8 +79,9 @@ blockquote {
     background-image: url(../images/photo2.jpg);
 }
 #header .menu {
-    display: inline;
-    margin-left: 10px;
+    width: 850px;
+    margin: 0 auto 0 auto;
+    vertical-align: middle;
 }
 #header .title {
     width: 100px;
@@ -167,6 +174,7 @@ blockquote {
     font-size: 12px;
     font-style: italic;
     margin-bottom: 10px;
+    display: none;
 }
 #comment-form input {
     width: 200px;
@@ -230,9 +238,10 @@ ul.tags li {
 .extras li {
     display: inline;
     list-style: none;
+    margin-right: 8px;
 }
 .extras li.separator {
-    padding-left: 4px;
+    padding-left: 0;
     padding-right: 4px;
 }
 
@@ -290,12 +299,12 @@ ul.tags li {
     display: inline;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 6px 0 0;
     white-space: nowrap;
 }
 #footer li.separator {
-    padding-left: 4px;
-    padding-right: 4px;
+    padding-left: 0;
+    padding-right: 6px;
 }
 #footer li a {
     color: #C2C0BA;
@@ -312,6 +321,7 @@ ul.tags li {
     line-height: 1.6em;
     margin: 0 auto 0 auto;
     width: 850px;
+    text-align: left;
 }
 #footer .menu img {
     margin-left: 5px;
@@ -323,7 +333,7 @@ ul.tags li {
     line-height: 1.9em;
     margin: 0 auto 0 auto;
     width: 850px;
-    display: inline;
+    text-align: left;
 }
 #footer .links {
     margin-top: 25px;

@@ -21,32 +21,27 @@
     		//<![CDATA[
     		
     		var reCaptchaPublicKey = '<?php global $recaptcha_opt;echo $recaptcha_opt['pubkey']; ?>';
+    		var templateDirectory = '<?php bloginfo('template_directory'); ?>';
 
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
 
-    			$('#header').prepend('<img class="photo" src="<?php bloginfo('template_directory'); ?>/images/spacer.gif" alt="" />');
+                /*
+                <?php if (is_home()): ?>
+        			$('#recent').after('<div id="wonderbar"><img id="previous" class="icon" src="' + templateDirectory + '/images/larrow.gif" alt="" /><img id="next" class="icon" src="' + templateDirectory + '/images/rarrow.gif" alt="" /></div>');
+        			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
+        			$('#recent').wrapInner('<div class="wrapper"></div>');
+        			$('#recent .wrapper').wrapInner('<ul></ul>');
+        			$('#recent .entry').wrap('<li></li>');
+        			$('.entry:last').after('<div style="clear:both;"></div>');
 
-    			
-    			$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
-
-    			$('#recent').after('<div id="wonderbar"><img id="previous" class="icon" src="<?php bloginfo('template_directory'); ?>/images/larrow.gif" alt="" /><img id="next" class="icon" src="<?php bloginfo('template_directory'); ?>/images/rarrow.gif" alt="" /></div>');
-    			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
-    			$('#recent').wrapInner('<div class="wrapper"></div>');
-    			$('#recent .wrapper').wrapInner('<ul></ul>');
-    			$('#recent .entry').wrap('<li></li>');
-    			$('.entry:last').after('<div style="clear:both;"></div>');
-    			$('#footer').wrapInner('<div class="wrapper"></div>');
-    			$('#footer .links li:first-child').addClass('first');
-    			$('#footer .links:last').after('<div style="clear:both;"></div>');
-
-
-
-    		    $("#recent .wrapper").jCarouselLite({
-    		        btnNext: "#next",
-    		        btnPrev: "#previous",
-    				visible: 1
-    		    });
+        		    $("#recent .wrapper").jCarouselLite({
+        		        btnNext: "#next",
+        		        btnPrev: "#previous",
+        				visible: 1
+        		    });
+                <?php endif; ?>
+                */
     		});
     		//]]>
     	</script>
@@ -56,7 +51,7 @@
 	<body>
 		<div id="container">
 			<div id="header">
-				<h1 class="title"><a href="<?php bloginfo('url');?>/"><?php bloginfo('name');?></h1>
+				<h1 class="title"><a href="<?php bloginfo('url');?>/"><?php bloginfo('name');?></a></h1>
                 <?php include('menu.php') ?>
 			</div>
 			<div id="content">

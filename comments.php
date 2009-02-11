@@ -1,9 +1,11 @@
 <a name="comments"></a>
 <div class="comments">
-    <h3 class="title">Comments (<a id="comment-add" href="#commentsform">Add</a>)</h3>
+    <h3 class="title"><?php comments_number(); ?> (<a id="comment-add" href="#respond">Add</a>)</h3>
     <?php if ( have_comments() ) : ?>
+        <?php $counter = 1; ?>
         <?php while(have_comments()):the_comment();?>
             <?php include('comment.php');?>
+            <?php $counter++; ?>
         <?php endwhile;?>
     <?php else: ?>
     <p>There are no comments yet!</p>

@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    /*
+    // header
+    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
+
+    // footer
+	$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
+	$('#footer').wrapInner('<div class="wrapper"></div>');
+	$('#footer .links li:first-child').addClass('first');
+	$('#footer .links:last').after('<div style="clear:both;"></div>');
+
     // wire up tags toggle
     $('.entry').each(function() {
         var $entry = $(this);
@@ -21,16 +31,7 @@ $(document).ready(function(){
 
     // comments
     $('.comment').each(function(i) {
-        i = i+1;
-        $(this).prepend('<div class="number">'+i+'</div>');
-        
-        if (i % 2 == 0) {
-            $(this).addClass('even');
-            if ($(this).hasClass('author')) {
-                $(this).corner('10px');
-            }
-        } else {
-            $(this).addClass('odd');
+        if ($(this).hasClass('author') || $(this).hasClass('odd')) {
             $(this).corner('10px');
         }
     })
@@ -81,7 +82,7 @@ $(document).ready(function(){
               recaptcha_response_field: $('#recaptcha_response_field').val(),
               recaptcha_challenge_field: $('#recaptcha_challenge_field').val()
           },
-          url: '../../wp-content/themes/chrislaco.com/comments-ajax.php',
+          url: templateDirectory + '/comments-ajax.php',
           dataType: 'html',
           error: function(XMLHttpRequest, textStatus, errorThrown) {
                $('#comment-form .status').html(XMLHttpRequest.responseText);
@@ -95,4 +96,5 @@ $(document).ready(function(){
 
         return false;
     });
+    */
 });
