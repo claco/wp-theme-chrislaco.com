@@ -12,7 +12,9 @@
     	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
+    	<?php if (is_home()): ?>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
+        <?php endif; ?>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.corner.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushXml.js"></script>

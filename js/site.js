@@ -1,33 +1,39 @@
 $(document).ready(function(){
-    /*
-    // header
-    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
-
-    // footer
-	$('#footer .menu li:not(:last)').after('<li class="separator">|</li>');
-	$('#footer').wrapInner('<div class="wrapper"></div>');
-	$('#footer .links li:first-child').addClass('first');
-	$('#footer .links:last').after('<div style="clear:both;"></div>');
-
-    // wire up tags toggle
-    $('.entry').each(function() {
+    // wire up tags toggle and separators
+    $('#content .entry').each(function() {
         var $entry = $(this);
-        $entry.find('li.tags a').click(function() {
-            $entry.find('ul.tags').toggle('fast');
+        var $tags = $entry.find('ul.tags').hide();
+ 
+        $tags.find('li:not(:last)').each(function() {
+            $(this).after('<li class="separator">, </li>');
+        });
+
+        $entry.find('li.tags a:first').click(function() {
+            $tags.toggle('fast');
             return false;
         });
     });
 
-    // tag separators
-    $('ul.tags').each(function() {
-        $(this).find('li:not(:last)').after('<li class="separator">, </li>');
-        $(this).corner('6px');
-    });
+    // pipe separators
+	$('#header .menu li:not(:last), #footer .menu li:not(:last)').after('<li class="separator">|</li>');
 
     // dot separators
-    $('#header .menu, #footer .copyright, #content .extras').each(function(){
-        $(this).find('li:not(:last)').after('<li class="separator">&middot;</li>');
+    $('.entry .extras, #footer .copyright').each(function(){
+        $(this).find('li:not(:last, ".tags, .tag, .separator")').after('<li class="separator">&middot;</li>');
     })
+
+return;
+
+    /*
+    // header
+    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
+
+
+	$('#footer').wrapInner('<div class="wrapper"></div>');
+	$('#footer .links li:first-child').addClass('first');
+	$('#footer .links:last').after('<div style="clear:both;"></div>');
+
+
 
     // comments
     $('.comment').each(function(i) {

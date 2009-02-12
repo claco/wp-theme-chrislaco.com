@@ -223,6 +223,8 @@ body.category #content .description {
     letter-spacing: -1px;
     color: #000000;
 }
+
+
 ul.tags {
     margin: 0 0 15px 0;
     font-size: 10px;
@@ -233,6 +235,9 @@ ul.tags {
 ul.tags li {
     display: inline;
     margin-right: 8px;
+}
+ul.tags li.separator {
+    margin: 0 7px 0 -7px;
 }
 .dp-highlighter .bar {
     display: none;
@@ -249,8 +254,7 @@ ul.tags li {
     margin-right: 8px;
 }
 .extras li.separator {
-    padding-left: 0;
-    padding-right: 4px;
+    margin: 0 4px 0 -4px;
 }
 
 #wonderbar {
