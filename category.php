@@ -1,7 +1,11 @@
 <?php get_header();?>
-<?php if(have_posts()):?>
-	<?php while(have_posts()):the_post();?>
-        <?php include('entry.php');?>
-	<?php endwhile;?>
-<?php endif;?>
+
+<?php $description = trim(strip_tags(category_description())); ?>
+<?php if ($description) : ?>
+    <div class="description">
+        <?php echo $description; ?>
+    </div>
+<?php endif; ?>
+<?php get_entries(); ?>
+
 <?php get_footer();?>

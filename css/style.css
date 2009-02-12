@@ -94,6 +94,13 @@ blockquote {
 }
 
 /* Content */
+body.category #content .description {
+    color: #000000;
+    font-size: 11px;
+    font-style: italic;
+    margin: 0;
+    padding: 5px 0 5px 0;
+}
 #content {
     margin: 0 auto 50px auto;
     width: 850px;
@@ -105,6 +112,9 @@ blockquote {
     font-size: 20px;
     color: #000000;
     margin-bottom: 7px;
+}
+#content .description {
+    
 }
 #content .entry .more-link {
     color: #666666;
@@ -218,13 +228,11 @@ ul.tags {
     font-size: 10px;
     font-weight: bold;
     color: #000000;
-    background: #efefef;
-    display: none;
-    padding: 2px 5px 2px 5px;
+    padding: 2px 5px 2px 0;
 }
 ul.tags li {
     display: inline;
-    margin-right: 2px;
+    margin-right: 8px;
 }
 .dp-highlighter .bar {
     display: none;

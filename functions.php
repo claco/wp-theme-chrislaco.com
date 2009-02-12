@@ -17,4 +17,12 @@ function pages_list_items() {
     return $output;
 }
 
+function get_entries($excerpts=0, $class='entries') {
+    include(TEMPLATEPATH . '/entries.php');
+}
+
+function get_entry($excerpts=0) {
+    include(TEMPLATEPATH . '/entry.php');
+}
+
 ?>

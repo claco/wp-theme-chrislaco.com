@@ -48,7 +48,16 @@
     	
     	<?php wp_head(); ?>
 	</head>
-	<body>
+	<?php if (is_category() ) : ?>
+        <body class="category <?php $category = get_the_category(); echo $category[0]->category_nicename; ?>">
+    <?php elseif (is_single() ) : ?>
+        <body class="entry">
+    <?php elseif (is_tag()) : ?>
+    <?php echo the_tags(); ?>
+        <body class="tag <?php echo $tag; ?>">
+    <?php else: ?>
+	    <body>
+    <?php endif; ?>
 		<div id="container">
 			<div id="header">
 				<h1 class="title"><a href="<?php bloginfo('url');?>/"><?php bloginfo('name');?></a></h1>

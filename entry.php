@@ -7,9 +7,11 @@
 		><li class="category"><?php if (the_category(', '))  the_category(); ?></li
 		><?php if ($tags):?><li class="tags"><a title="View tags for <?php the_title();?>" href="#">Tags (<?php echo count($tags);?>)</a
 		><?php if ($tags):?><ul class="tags"
-		><?php the_tags('<li class="tag">','</li><li class="tag">','</li>');?></ul><?php endif;?></li><?php endif;?>
+		><?php foreach ($tags as $tag) { ?>
+		    <li class="tag"><a title="View entries tagged with <?php echo $tag->name;?>" href="<?php bloginfo('url');?>/tag/<?php echo $tag->slug;?>/"><?php echo $tag->name;?></a></li>
+		<?php }; ?></ul><?php endif;?></li><?php endif;?>
 	</ul>
 	<div class="content">
-	    <?php ($excerpt) ? the_excerpt() : the_content('More...'); ?>
+	    <?php ($excerpts) ? the_excerpt() : the_content('More...'); ?>
 	</div>
 </div>
