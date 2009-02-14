@@ -27,7 +27,7 @@ $(document).ready(function(){
         $(this).find('li:not(:last, ".tags, .tag, .separator")').after('<li class="separator">&middot;</li>');
     })
 
-    if ($('#projects')) {
+    if ($('#projects').length > 0) {
         $.getJSON('http://github.com/api/v1/json/claco/?callback=?', {}, function(data) {
             $.each(data.user.repositories, function(i,item){
                 $('#projects').after('<div class="entry"><h2 class="title"><a href="' + item.url + '">' + item.name + '</a></h2><ul class="extras"><li><a href="'+item.url+'/forkqueue/">Forks ('+item.forks+')</a></li></ul><div class="content"><p>' + item.description + '</p></div></div>');
