@@ -4,22 +4,7 @@ Template Name: Projects
 */
 ?>
 <?php get_header();?>
-<?php if(have_posts()):?>
-	<?php while(have_posts()):the_post();?>
-		<div class="post">
-			<h2 class="title"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-			<div class="date">
-				<?php the_time('F jS, Y');?>
-			</div>
-			<div class="content">
-				<?php the_content();?>
-			</div>
-			<?php if (get_the_tags()):?>
-			<div class="tags">
-				Tags: <?php the_tags('<div class="tag">','</div><div class="tag">','</div>');?>
-			</div>
-			<?php endif;?>
-		</div>
-	<?php endwhile;?>
-<?php endif;?>
+<div class="entries">
+    <div id="projects"></div>
+</div>
 <?php get_footer();?>

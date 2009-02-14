@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    // header
+    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
+    $('#header').wrapInner('<div class="wrapper"></div>');
+    $('#header .menu').css('width', '700px').css('margin', '-17px auto auto 50px').css('vertical-align', 'top');
+
     // wire up tags toggle and separators
     $('#content .entry').each(function() {
         var $entry = $(this);
@@ -22,60 +27,26 @@ $(document).ready(function(){
         $(this).find('li:not(:last, ".tags, .tag, .separator")').after('<li class="separator">&middot;</li>');
     })
 
-return;
+    if ($('#projects')) {
+        $.getJSON('http://github.com/api/v1/json/claco/?callback=?', {}, function(data) {
+            $.each(data.user.repositories, function(i,item){
+                $('#projects').after('<div class="entry"><h2 class="title"><a href="' + item.url + '">' + item.name + '</a></h2><ul class="extras"><li><a href="'+item.url+'/forkqueue/">Forks ('+item.forks+')</a></li></ul><div class="content"><p>' + item.description + '</p></div></div>');
+            });
 
-    /*
-    // header
-    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
+        });
+    };
 
-
-	$('#footer').wrapInner('<div class="wrapper"></div>');
-	$('#footer .links li:first-child').addClass('first');
-	$('#footer .links:last').after('<div style="clear:both;"></div>');
-
-
-
-    // comments
     $('.comment').each(function(i) {
         if ($(this).hasClass('author') || $(this).hasClass('odd')) {
             $(this).corner('10px');
         }
-    })
-
-    // comment form
-    $('#comment-form').dialog({
-        resizable: false,
-        width: 455,
-        height: 470,
-        buttons: {
-            'Submit': function()  {
-                $('#commentform').submit();
-            },
-            'Cancel': function() {
-                $(this).dialog('close');
-            }
-        },
-        autoOpen: false,
-        modal: true,
-        stack: true,
-        overlay: {
-            opacity: 0.6,
-            background: "black"
-        }
-    }).find('#submit').hide();
-
-    $('#comment-add').click(function() {
-        $('#comment-form').dialog('open');
-        $('#author').focus();
-
-        Recaptcha.create(reCaptchaPublicKey, 'recaptcha_div', {
-           theme: 'clean',
-           tabindex: 4
-        });
-
-        return false;
     });
 
+    $('#comment-form').hide();
+    $('#comment-add').click(function() {
+        $('#comment-form').toggle();
+        $('#author').focus();
+    });
     $('#commentform').submit(function() {
         $.ajax({
           type: 'POST',
@@ -86,21 +57,35 @@ return;
               url: $('#url').val(),
               comment: $('#comment').val(),
               recaptcha_response_field: $('#recaptcha_response_field').val(),
-              recaptcha_challenge_field: $('#recaptcha_challenge_field').val()
+              recaptcha_challenge_field: $('#recaptcha_challenge_field').val(),
+              _wp_unfiltered_html_comment: $('#_wp_unfiltered_html_comment').val()
           },
           url: templateDirectory + '/comments-ajax.php',
           dataType: 'html',
           error: function(XMLHttpRequest, textStatus, errorThrown) {
-               $('#comment-form .status').html(XMLHttpRequest.responseText);
+               $('#formpoststatus').show().html(XMLHttpRequest.responseText);
                Recaptcha.reload();
           },
           success: function() {
-              $('#comment-form').dialog('close');
+              $('#comment-form').hide();
               window.location.reload();
           }
         });
 
         return false;
     });
+
+return;
+
+    /*
+
+
+	$('#footer').wrapInner('<div class="wrapper"></div>');
+	$('#footer .links li:first-child').addClass('first');
+	$('#footer .links:last').after('<div style="clear:both;"></div>');
+
+
+
+
     */
 });

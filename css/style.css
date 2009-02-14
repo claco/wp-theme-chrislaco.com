@@ -75,7 +75,7 @@ blockquote {
     vertical-align: middle;
     background-image: url(../images/photo.jpg);
 }
-#header .photo:hover {
+#sssheader .photo:hover {
     background-image: url(../images/photo2.jpg);
 }
 #header .menu {
@@ -179,7 +179,7 @@ body.category #content .description {
 .ui-dialog-buttonpane button {
     margin-right: 12px;
 }
-#comment-form .status {
+#formpoststatus {
     color: #ff0000;
     font-size: 12px;
     font-style: italic;
