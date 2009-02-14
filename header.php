@@ -26,7 +26,8 @@
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushPython.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushRuby.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushSql.js"></script>
-    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushVb.js"></script> 	 	 
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushVb.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushPerl.js"></script>	 	 
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
     	<script type="text/javascript">
     		//<![CDATA[
