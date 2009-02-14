@@ -18,6 +18,7 @@
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.corner.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushXml.js"></script>
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushBash.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
     	<script type="text/javascript">
     		//<![CDATA[
