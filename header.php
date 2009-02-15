@@ -13,7 +13,11 @@
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
     	<?php if (is_home()): ?>
-    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
+    	    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
+        <?php endif; ?>
+        <?php if (is_single()): ?>
+            <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.lightbox-0.5.min.js"></script>
+            <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/jquery.lightbox-0.5.css" />
         <?php endif; ?>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.corner.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
@@ -37,6 +41,18 @@
 
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
+
+                <?php if (is_single()): ?>
+                $(function() {
+                	$('.entry p a:has(img)').lightBox({
+                	    fixedNavigation: true,
+                	    imageBtnClose: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-close.gif',
+                    	imageLoading: '<?php bloginfo('template_directory'); ?>/images/lightbox-ico-loading.gif',
+                    	imageBtnPrev: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-prev.gif',
+                    	imageBtnNext: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-next.gif',
+                	});
+                });
+                <?php endif; ?>
 
                 /*
                 <?php if (is_home()): ?>
