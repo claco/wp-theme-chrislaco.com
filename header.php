@@ -50,6 +50,7 @@
                     	imageLoading: '<?php bloginfo('template_directory'); ?>/images/lightbox-ico-loading.gif',
                     	imageBtnPrev: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-prev.gif',
                     	imageBtnNext: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-next.gif',
+                    	imageBlank: '<?php bloginfo('template_directory'); ?>/images/lightbox-blank.gif',
                 	});
                 });
                 <?php endif; ?>
