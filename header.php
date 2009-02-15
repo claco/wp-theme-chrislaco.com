@@ -9,16 +9,14 @@
     	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css" />
     	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/styles/shCore.css" />
     	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/styles/shThemeDefault.css" />
+    	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/jquery.lightbox-0.5.css" />
     	<link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/style.css" />
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.5.3/jquery-ui.min.js"></script>
     	<?php if (is_home()): ?>
     	    <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jcarousellite.js"></script>
         <?php endif; ?>
-        <?php if (is_single()): ?>
-            <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.lightbox-0.5.min.js"></script>
-            <link rel="stylesheet" type="text/css" media="screen" charset="utf-8" href="<?php bloginfo('template_directory'); ?>/css/jquery.lightbox-0.5.css" />
-        <?php endif; ?>
+        <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.lightbox-0.5.min.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.corner.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shCore.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushXml.js"></script>
@@ -42,7 +40,6 @@
     		$(document).ready(function(){
     			SyntaxHighlighter.all();
 
-                <?php if (is_single()): ?>
                 $(function() {
                 	$('.entry p a:has(img)').lightBox({
                 	    fixedNavigation: true,
@@ -53,24 +50,19 @@
                     	imageBlank: '<?php bloginfo('template_directory'); ?>/images/lightbox-blank.gif',
                 	});
                 });
-                <?php endif; ?>
-
-                /*
                 <?php if (is_home()): ?>
-        			$('#recent').after('<div id="wonderbar"><img id="previous" class="icon" src="' + templateDirectory + '/images/larrow.gif" alt="" /><img id="next" class="icon" src="' + templateDirectory + '/images/rarrow.gif" alt="" /></div>');
+        			$('.entries.recent').after('<div id="wonderbar"><img id="previous" class="icon" src="' + templateDirectory + '/images/larrow.gif" alt="" /><img id="next" class="icon" src="' + templateDirectory + '/images/rarrow.gif" alt="" /></div>');
         			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
-        			$('#recent').wrapInner('<div class="wrapper"></div>');
-        			$('#recent .wrapper').wrapInner('<ul></ul>');
-        			$('#recent .entry').wrap('<li></li>');
-        			$('.entry:last').after('<div style="clear:both;"></div>');
-
-        		    $("#recent .wrapper").jCarouselLite({
-        		        btnNext: "#next",
-        		        btnPrev: "#previous",
+        			$('.entries.recent').wrapInner('<ul></ul>');
+        			$('.entries.recent').wrapInner('<div class="wrapper"></div>');
+        			$('.entries.recent .entry').wrap('<li></li>');
+        			$('.entries.recent .entry .extras').remove();
+        		    $('.entries.recent .wrapper').jCarouselLite({
+        		        btnNext: '#next',
+        		        btnPrev: '#previous',
         				visible: 1
         		    });
                 <?php endif; ?>
-                */
     		});
     		//]]>
     	</script>
