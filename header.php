@@ -73,9 +73,10 @@
         <body class="category <?php $category = get_the_category(); echo $category[0]->category_nicename; ?>">
     <?php elseif (is_single() ) : ?>
         <body class="entry">
-    <?php elseif (is_tag()) : ?>
-    <?php echo the_tags(); ?>
+    <?php elseif (is_tag()) : ?>>
         <body class="tag <?php echo $tag; ?>">
+    <?php elseif (is_home() ) : ?>
+        <body class="home">
     <?php else: ?>
 	    <body>
     <?php endif; ?>
