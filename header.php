@@ -52,7 +52,7 @@
                 });
                 <?php if (is_home()): ?>
         			$('.entries.recent').after('<div id="wonderbar"><img id="previous" class="icon" src="' + templateDirectory + '/images/larrow.gif" alt="" /><img id="next" class="icon" src="' + templateDirectory + '/images/rarrow.gif" alt="" /></div>');
-        			$('#wonderbar, #header').wrapInner('<div class="wrapper"></div>');
+        			$('#wonderbar').wrapInner('<div class="wrapper"></div>');
         			$('.entries.recent').wrapInner('<ul></ul>');
         			$('.entries.recent').wrapInner('<div class="wrapper"></div>');
         			$('.entries.recent .entry').wrap('<li></li>');

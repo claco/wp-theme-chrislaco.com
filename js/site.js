@@ -1,8 +1,8 @@
 $(document).ready(function(){
     // header
-    $('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
-    $('#header').wrapInner('<div class="wrapper"></div>');
-    $('#header .menu').css('width', '700px').css('margin', '-17px auto auto 50px').css('vertical-align', 'top');
+    //$('#header').prepend('<img class="photo" src="' + templateDirectory + '/images/spacer.gif" alt="" />');
+    $('#header .menu').wrap('<div class="wrapper"></div>');
+    //$('#header .menu').css('width', '700px').css('margin', '-17px auto auto 50px').css('vertical-align', 'top');
 
     // wire up tags toggle and separators
     $('#content .entry').each(function() {

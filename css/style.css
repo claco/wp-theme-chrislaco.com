@@ -42,59 +42,61 @@ blockquote {
 
 /* Header */
 #header {
-    background-color: #111111;
-    clear: both;
+    background-image: url(../images/banner.jpg);
+    background-repeat: repeat-x;
+    background-position: top left;
+    border-bottom: 2px solid #111111;
     color: #7A7976;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    height: 45px;
+    margin-bottom: 35px;
 }
-#header .wrapper {
+#header .title {
     width: 850px;
-    margin-left: auto;
-    margin-right: auto;
-}
-#header .menu li {
-    margin-right: 8px;
+    margin: 0 auto 0 auto;
+    padding: 7px 0 0 0;
+    position: relative;
 }
 #header a {
     color: #ffffff;
-    margin: 0;
-    font-size: 12px;
 }
-#header .separator {
-    color: #ffffff;
-    margin: 0 6px 0 0;
-    font-size: 12px;
-}
-#header a:hover {
+#header .menu a:hover {
     color: #83b728;
 }
-#header .photo {
-    border: 1px solid #ffffff;
-    padding: 3px;
-    display: inline;
-    height: 32px;
-    width: 32px;
+#header .menu img {
     vertical-align: middle;
-    background-image: url(../images/photo.jpg);
+    margin-bottom: 2px;
+    margin-left: 5px;
 }
-#header .photo:hover {
-    background-image: url(../images/photo2.jpg);
+#header .menu li {
+    margin: 3px 5px 3px 5px;
 }
 #header .menu {
     width: 850px;
     margin: 0 auto 0 auto;
-    vertical-align: middle;
+    padding: 3px 0 3px 5px;
+    background-color: #111111;
+    position: relative;
+    top: 9px;
 }
-#header .title {
-    width: 100px;
-    display: none;
+#header .wrapper {
+    background-color: #111111;
+    position: relative;
+    top: 9px;
+    margin-left: -8px;
 }
-#header li img {
-    vertical-align: middle;
-    padding-bottom: 3px;
-    margin-left: 5px;
+#header .wrapper .menu {
+    position: static;
+    padding-left: 0;
 }
+
+
+
+
+
+
+
+
+
 
 /* Content */
 body.category #content .description {
@@ -107,7 +109,7 @@ body.category #content .description {
 body.home #content {
     margin-bottom: -15px;
 }
-#content .entry, #content .comments, #comment-form {
+#content .entry, #content div.comments, #comment-form {
     margin: 0 auto 0 auto;
     padding-bottom: 20px;
     width: 850px;
