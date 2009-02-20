@@ -57,7 +57,7 @@ blockquote {
     position: relative;
 }
 #header a {
-    color: #ffffff;
+    color: #dddddd;
 }
 #header .menu a:hover {
     color: #83b728;
@@ -68,7 +68,15 @@ blockquote {
     margin-left: 5px;
 }
 #header .menu li {
-    margin: 3px 5px 3px 5px;
+    margin: 0;
+    padding: 0 6px 0 0;
+    font-size: 11px;
+}
+#header .menu li.separator {
+    padding: 0 6px 0 0;
+}
+#header .menu a {
+    color: #C2C0BA;
 }
 #header .menu {
     width: 850px;
@@ -82,7 +90,6 @@ blockquote {
     background-color: #111111;
     position: relative;
     top: 9px;
-    margin-left: -8px;
 }
 #header .wrapper .menu {
     position: static;
