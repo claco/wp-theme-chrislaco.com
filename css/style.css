@@ -51,10 +51,14 @@ blockquote {
     margin-bottom: 35px;
 }
 #header .title {
-    width: 850px;
+    width: 810px;
     margin: 0 auto 0 auto;
-    padding: 7px 0 0 0;
+    padding: 11px 0 0 45px;
     position: relative;
+    background-image: url(../images/photo.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 5px;
+    height: 40px;
 }
 #header a {
     color: #dddddd;
@@ -84,19 +88,23 @@ blockquote {
     padding: 3px 0 3px 5px;
     background-color: #111111;
     position: relative;
-    top: 9px;
+    top: -6px;
 }
 #header .wrapper {
     background-color: #111111;
     position: relative;
-    top: 9px;
+    top: -7px;
 }
 #header .wrapper .menu {
     position: static;
     padding-left: 0;
 }
-
-
+#header .photo {
+    height: 36px;
+    width: 36px;
+    background-image: url(../images/photo.jpg);
+    background-repeat: no-repeat;
+}
 
 
 
