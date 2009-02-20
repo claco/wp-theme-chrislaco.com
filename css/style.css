@@ -48,7 +48,7 @@ blockquote {
     border-bottom: 2px solid #111111;
     color: #7A7976;
     height: 45px;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
 }
 #header .title {
     width: 810px;
@@ -105,13 +105,6 @@ blockquote {
     background-image: url(../images/photo.jpg);
     background-repeat: no-repeat;
 }
-
-
-
-
-
-
-
 
 /* Content */
 body.category #content .description {
