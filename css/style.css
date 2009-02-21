@@ -79,9 +79,6 @@ blockquote {
 #header .menu li.separator {
     padding: 0 6px 0 0;
 }
-#header .menu a {
-    color: #C2C0BA;
-}
 #header .menu {
     width: 850px;
     margin: 0 auto 0 auto;
