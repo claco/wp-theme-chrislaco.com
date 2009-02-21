@@ -30,7 +30,6 @@
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushSql.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushVb.js"></script>
     	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/external/syntax-highlighter/scripts/shBrushPerl.js"></script>	 	 
-    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
     	<script type="text/javascript">
     		//<![CDATA[
     		
@@ -47,7 +46,7 @@
                     	imageLoading: '<?php bloginfo('template_directory'); ?>/images/lightbox-ico-loading.gif',
                     	imageBtnPrev: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-prev.gif',
                     	imageBtnNext: '<?php bloginfo('template_directory'); ?>/images/lightbox-btn-next.gif',
-                    	imageBlank: '<?php bloginfo('template_directory'); ?>/images/lightbox-blank.gif',
+                    	imageBlank: '<?php bloginfo('template_directory'); ?>/images/lightbox-blank.gif'
                 	});
                 });
                 <?php if (is_home()): ?>
@@ -66,7 +65,8 @@
     		});
     		//]]>
     	</script>
-    	
+    	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/site.js"></script>
+    	    	
     	<?php wp_head(); ?>
 	</head>
 	<?php if (is_category() ) : ?>
