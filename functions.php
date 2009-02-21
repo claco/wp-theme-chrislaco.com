@@ -1,5 +1,12 @@
 <?php
 
+function expires() {
+      $offset = 3600 * 24;	
+      $expire = "Expires: " . gmdate("D, d M Y H:i:s", time() + $offset) . " GMT";
+      Header($expire);
+      Header("Cache-Control: max-age=".$offset.", must-revalidate");
+      Header("Pragma:");
+}
 
 function coalesce() {
     $args = func_get_args();
