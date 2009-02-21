@@ -125,6 +125,9 @@ body.home #content {
 #wonderbar {
     margin-bottom: 30px;
 }
+#wonderbar .wrapper {
+    padding-bottom: 12px;
+}
 #content .comments {
     margin-bottom: 20px;
 }
